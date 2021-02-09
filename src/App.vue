@@ -1,19 +1,15 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <AntTable />
   </div>
 </template>
 
 <script>
-// import HelloWorld from './views/components/HelloWorld.vue';
 import AntTable from './views/components/AntTable.vue';
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld,
     AntTable,
   },
 };

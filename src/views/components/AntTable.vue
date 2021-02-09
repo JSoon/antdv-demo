@@ -1,14 +1,24 @@
 <template>
-<div class="table-wrapper">
-  <a-table
-  :columns="columns"
-  :data-source="data"
-  :table-layout="tableLayout"
-  :scroll="scroll"
-  size="small">
-    <a slot="name" slot-scope="text">{{ text }}</a>
-  </a-table>
-</div>
+  <div class="table-wrapper">
+    <a-tabs default-active-key="1" :animated="false" @change="callback">
+      <a-tab-pane key="1" tab="固定列+不换行">
+        <a-table
+        :columns="columns"
+        :data-source="data"
+        :table-layout="tableLayout"
+        :scroll="scroll"
+        size="small">
+          <a slot="name" slot-scope="text">{{ text }}</a>
+        </a-table>
+      </a-tab-pane>
+      <a-tab-pane key="2" tab="Tab 2" force-render>
+        Content of Tab Pane 2
+      </a-tab-pane>
+      <a-tab-pane key="3" tab="Tab 3">
+        Content of Tab Pane 3
+      </a-tab-pane>
+    </a-tabs>
+  </div>
 </template>
 <script>
 const columns = [
@@ -87,6 +97,11 @@ export default {
       // 设置横向或纵向滚动，也可用于指定滚动区域的宽和高，建议为 x 设置一个数字，如果要设置为 true，需要配合样式 .ant-table td { white-space: nowrap; }
       scroll: { x: true },
     };
+  },
+  methods: {
+    callback(key) {
+      console.log(key);
+    },
   },
 };
 </script>
