@@ -1,5 +1,8 @@
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 import Vue from 'vue';
 import App from './App.vue';
+import '@/components/common';
 
 Vue.config.productionTip = false;
 
