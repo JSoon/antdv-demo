@@ -1,6 +1,11 @@
 <template>
   <div class="table-wrapper">
-    <a-tabs default-active-key="1" :animated="false" @change="callback">
+    <a-tabs
+      default-active-key="1"
+      :animated="false"
+      tab-position="top"
+      @change="callback"
+    >
       <a-tab-pane key="1" tab="固定列+不换行">
         <a-table
         :columns="columns"
@@ -12,8 +17,28 @@
           <a slot="name" slot-scope="text">{{ text }}</a>
         </a-table>
       </a-tab-pane>
-      <a-tab-pane key="2" tab="Tab 2" force-render>
-        Content of Tab Pane 2
+      <a-tab-pane key="2" tab="template风格(colums数据在模板上进行绑定)" force-render>
+        <a-table
+        :data-source="data"
+        :table-layout="tableLayout"
+        :scroll="scroll"
+        :pagination="false"
+        size="small">
+          <a-table-column key="name" title="Name" data-index="name">
+            <template slot-scope="text">
+              <a>{{ text }}</a>
+            </template>
+          </a-table-column>
+          <a-table-column key="age" title="Age" data-index="age" />
+          <a-table-column key="address" title="Address" data-index="address" />
+          <a-table-column key="tags" title="Tags" data-index="tags">
+            <template slot-scope="tags">
+              <span>
+                <a-tag v-for="tag in tags" :key="tag" color="blue">{{ tag }}</a-tag>
+              </span>
+            </template>
+          </a-table-column>
+        </a-table>
       </a-tab-pane>
       <a-tab-pane key="3" tab="Tab 3">
         Content of Tab Pane 3
