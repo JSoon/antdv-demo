@@ -108,12 +108,12 @@ export default {
 </script>
 
 <style scoped>
-.ant-table td {
-  white-space: nowrap;
-}
-
 .table-wrapper {
   width: 60%;
   margin: 50px auto;
+}
+
+.table-wrapper::v-deep .ant-table td {
+  white-space: nowrap;
 }
 </style>
