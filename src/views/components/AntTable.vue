@@ -7,6 +7,7 @@
         :data-source="data"
         :table-layout="tableLayout"
         :scroll="scroll"
+        :pagination="false"
         size="small">
           <a slot="name" slot-scope="text">{{ text }}</a>
         </a-table>
