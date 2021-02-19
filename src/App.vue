@@ -1,15 +1,19 @@
 <template>
   <div id="app">
+    <CompilationScope />
+    <hr>
     <AntTable />
   </div>
 </template>
 
 <script>
+import CompilationScope from './views/trials/slots/CompilationScope.vue';
 import AntTable from './views/components/AntTable.vue';
 
 export default {
   name: 'App',
   components: {
+    CompilationScope,
     AntTable,
   },
 };
