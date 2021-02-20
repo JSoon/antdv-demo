@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2>Slots: Compilation Scope</h2>
     <NavigationLink url="http://jsoon.fun">
       {{ parentScope.url }}
     </NavigationLink>

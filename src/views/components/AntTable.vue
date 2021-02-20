@@ -1,5 +1,6 @@
 <template>
   <div class="table-wrapper">
+    <h2>AntTable</h2>
     <a-tabs
       default-active-key="1"
       :animated="false"
