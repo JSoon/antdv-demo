@@ -1,4 +1,4 @@
-import RenderComponent from './RenderComponent.vue';
+import RenderComponent from './RenderComponent';
 
 export default {
   name: 'AnchoredHeading',
@@ -20,6 +20,7 @@ export default {
       </h1>
     */
 
+    // https://forum.vuejs.org/t/scoped-slot-in-render-function-with-default-content/8201/2
     const slotDefault = this.$scopedSlots.default || ((props) => `默认${props.text}级标题`);
 
     return createElement(
@@ -34,15 +35,18 @@ export default {
         slotDefault({
           text: this.level,
         }),
-        createElement(RenderComponent, {
-          // 当且仅当 createElement 第一个参数为 component 对象时生效
-          props: {
-            someProp: this.level,
+        createElement(
+          RenderComponent,
+          {
+            // 传递给 RenderComponent 的 props 和 scopedSlots
+            props: {
+              someProp: this.level,
+            },
+            scopedSlots: {
+              default: (props) => createElement('strong', props.someProp),
+            },
           },
-          scopedSlots: {
-            default: (props) => createElement('strong', props.someProp),
-          },
-        }),
+        ),
       ],
     );
   },
