@@ -1,23 +1,31 @@
 <template>
   <div id="app">
+    <ChangeDetectionCaveats />
+    <hr>
     <CompilationScope />
     <hr>
     <Basics />
+    <hr>
+    <FunctionalComponents />
     <hr>
     <AntTable />
   </div>
 </template>
 
 <script>
+import ChangeDetectionCaveats from './views/trials/reactivity-in-depth/ChangeDetectionCaveats.vue';
 import CompilationScope from './views/trials/slots/CompilationScope.vue';
 import Basics from './views/trials/render-functions/Basics.vue';
+import FunctionalComponents from './views/trials/render-functions/FunctionalComponents.vue';
 import AntTable from './views/components/AntTable.vue';
 
 export default {
   name: 'App',
   components: {
+    ChangeDetectionCaveats,
     CompilationScope,
     Basics,
+    FunctionalComponents,
     AntTable,
   },
 };
