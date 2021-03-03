@@ -1,5 +1,7 @@
 <template>
   <div>
+    <h2>Internals: Reactivity in Depth</h2>
+
     {{fooDesc}}
     <br>
     {{barDesc}}
