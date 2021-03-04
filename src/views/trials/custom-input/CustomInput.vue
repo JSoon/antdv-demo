@@ -4,7 +4,7 @@
 
     <input
         v-bind:value="value"
-        v-on:input="onInput"
+        v-on:input="onInput($event)"
       >
   </div>
 </template>
