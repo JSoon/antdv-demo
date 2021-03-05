@@ -2,6 +2,8 @@
   <div>
     <h2>Components Basics - Using v-model on Components</h2>
 
+    <slot></slot>
+
     <input
         v-bind:value="value"
         v-on:input="onInput($event)"

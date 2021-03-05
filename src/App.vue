@@ -11,8 +11,11 @@
     <CustomInput
       :value="customInputValue"
       @input="onCustomInput"
-    />
-    {{ customInputValue }}
+    >
+      <div>{{ customInputValue }}</div>
+    </CustomInput>
+    <hr>
+    <DependencyInjection />
     <hr>
     <AntTable />
   </div>
@@ -24,6 +27,7 @@ import CompilationScope from './views/trials/slots/CompilationScope.vue';
 import Basics from './views/trials/render-functions/Basics.vue';
 import FunctionalComponents from './views/trials/render-functions/FunctionalComponents.vue';
 import CustomInput from './views/trials/custom-input/CustomInput.vue';
+import DependencyInjection from './views/trials/patterns/dependency-injection/DependencyInjection.vue';
 import AntTable from './views/components/AntTable.vue';
 
 export default {
@@ -34,6 +38,7 @@ export default {
     Basics,
     FunctionalComponents,
     CustomInput,
+    DependencyInjection,
     AntTable,
   },
   data() {
