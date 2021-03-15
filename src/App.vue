@@ -10,6 +10,8 @@
     <hr>
     <FunctionalComponents />
     <hr>
+    <TemplateCompilation />
+    <hr>
     <CustomInput
       :value="customInputValue"
       @input="onCustomInput"
@@ -29,6 +31,7 @@ import ChangeDetectionCaveats from './views/trials/reactivity-in-depth/ChangeDet
 import CompilationScope from './views/trials/slots/CompilationScope.vue';
 import Basics from './views/trials/render-functions/Basics.vue';
 import FunctionalComponents from './views/trials/render-functions/FunctionalComponents.vue';
+import TemplateCompilation from './views/trials/render-functions/TemplateCompilation.vue';
 import CustomInput from './views/trials/custom-input/CustomInput.vue';
 import DependencyInjection from './views/trials/patterns/dependency-injection/DependencyInjection.vue';
 import AntTable from './views/components/AntTable.vue';
@@ -41,6 +44,7 @@ export default {
     CompilationScope,
     Basics,
     FunctionalComponents,
+    TemplateCompilation,
     CustomInput,
     DependencyInjection,
     AntTable,

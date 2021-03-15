@@ -1,4 +1,7 @@
 import RenderComponent from './RenderComponent';
+import styles from './style.module.less';
+
+console.log(styles);
 
 export default {
   name: 'AnchoredHeading',
@@ -26,9 +29,10 @@ export default {
     return createElement(
       `h${this.level}`, // tag name
       {
-        class: {
-          'some-class': true,
-        },
+        class: [
+          'some-class',
+          `${styles.title}`,
+        ],
       },
       [
         // array of children
@@ -41,6 +45,7 @@ export default {
             // 传递给 RenderComponent 的 props 和 scopedSlots
             props: {
               someProp: this.level,
+              styles,
             },
             scopedSlots: {
               default: (props) => createElement('strong', props.someProp),
