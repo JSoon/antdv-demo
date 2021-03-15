@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <demo />
+    <hr>
     <ChangeDetectionCaveats />
     <hr>
     <CompilationScope />
@@ -22,6 +24,7 @@
 </template>
 
 <script>
+import demo from './views/demo.vue';
 import ChangeDetectionCaveats from './views/trials/reactivity-in-depth/ChangeDetectionCaveats.vue';
 import CompilationScope from './views/trials/slots/CompilationScope.vue';
 import Basics from './views/trials/render-functions/Basics.vue';
@@ -33,6 +36,7 @@ import AntTable from './views/components/AntTable.vue';
 export default {
   name: 'App',
   components: {
+    demo,
     ChangeDetectionCaveats,
     CompilationScope,
     Basics,
